@@ -859,8 +859,17 @@ figcaption {
   font-family: Polysanstrial slimwide, sans-serif;
 }
 
-.link, .link-2, .link-3, .link-4 {
+.link {
   color: var(--white);
+  text-align: left;
+}
+
+.link-2, .link-3, .link-4 {
+  color: var(--white);
+}
+
+.link-5 {
+  color: #fff;
 }
 
 @media screen and (max-width: 991px) {
