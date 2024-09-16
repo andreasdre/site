@@ -32,41 +32,17 @@
       object-fit: cover;
     }
 
-    /* Align text consistently for the intro, "About", work positions, and footer */
-    .intro-wrap,
-    .carrer-headline-wrap,
-    .work-position-container,
-    .footer-wrap {
-      padding-left: 20px; /* Consistent left padding */
+    /* CSS for Flexbox layout */
+    .work-position-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
 
-    /* Ensure text within each section is aligned left */
-    .work-position-wrap, 
-    .position-name-text, 
-    .paragraph-light, 
-    .paragraph-tiny {
-      text-align: left;
-    }
-
-    /* Align the footer links to the left */
-    .footer-links {
-      display: block;
-    }
-
-    .footer-item {
-      display: block;
-      margin-bottom: 10px; /* Space between footer items */
-      text-align: left;
-    }
-
-    /* Mobile adjustments for smaller screens */
     @media (max-width: 768px) {
-      .intro-wrap,
-      .carrer-headline-wrap,
-      .work-position-container,
-      .footer-wrap {
-        padding-left: 10px;
-        padding-right: 10px;
+      .work-position-container {
+        flex-direction: column;
       }
     }
   </style>
@@ -82,7 +58,6 @@
 
   <div class="section">
     <div class="container">
-      <!-- Intro content with consistent left padding -->
       <div class="intro-wrap">
         <div class="name-text">Andreas Homer</div>
         <div class="paragraph-light"><br>🛠️ Founder and Operator</div>
@@ -93,13 +68,12 @@
   
     <div class="section">
       <div class="container">
-        <!-- "About" section with consistent left padding -->
         <div class="carrer-headline-wrap">
           <h2 class="heading">About</h2>
           <p class="paragraph-light">12+ years of experience leading teams to growth and exits in B2C/B2B products, spanning startups to Fortune 10 companies. Former D1 runner at USC. Bilingual dual-citizen of the USA and France.</p>
         </div>
 
-        <!-- Flex container for work positions with consistent left padding -->
+        <!-- Flex container for work positions -->
         <div class="work-position-container">
           <div id="w-node-_6d3577dd-e2ba-78fe-2782-f5c31aeb20cf-b4a76254" class="work-position-wrap">
             <div class="position-name-text">
@@ -150,17 +124,16 @@
           </div>
         </div>
         <!-- End of Flex container -->
-
-        <!-- Footer with left-aligned content -->
-        <div class="footer-wrap">
-          <div class="footer-links">
-            <a href="mailto:andreas.alexi@gmail.com" target="_blank" class="footer-item">EMAIL</a>
-            <a href="https://twitter.com/andreas_dre" target="_blank" class="footer-item">Twitter</a>
-            <a href="https://www.linkedin.com/in/andreasbh/" target="_blank" class="footer-item">Linkedin</a>
-            <a href="https://drive.google.com/file/d/1sRbuAgJj8qqhbnYF3UDoRKZr34p1ZXs5/view?usp=sharing" class="footer-item">CV</a>
-          </div>
-        </div>
       </div>
+    </div>
+  </div>
+  
+  <div class="footer-wrap">
+    <div class="footer-links">
+      <a href="mailto:andreas.alexi@gmail.com" target="_blank" class="footer-item">EMAIL</a>
+      <a href="https://twitter.com/andreas_dre" target="_blank" class="footer-item">Twitter</a>
+      <a href="https://www.linkedin.com/in/andreasbh/" target="_blank" class="footer-item">Linkedin</a>
+      <a href="https://drive.google.com/file/d/1sRbuAgJj8qqhbnYF3UDoRKZr34p1ZXs5/view?usp=sharing" class="footer-item">CV</a>
     </div>
   </div>
 
