@@ -32,21 +32,15 @@
       object-fit: cover;
     }
 
-    /* CSS for Flexbox layout */
-    .work-position-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      flex-wrap: wrap;
+    /* Align text consistently for the intro, "About", work positions, and footer */
+    .intro-wrap,
+    .carrer-headline-wrap,
+    .work-position-container,
+    .footer-wrap {
+      padding-left: 20px; /* Consistent left padding */
     }
 
-    @media (max-width: 768px) {
-      .work-position-container {
-        flex-direction: column;
-      }
-    }
-
-    /* Ensure text is left aligned on all screen sizes */
+    /* Ensure text within each section is aligned left */
     .work-position-wrap, 
     .position-name-text, 
     .paragraph-light, 
@@ -54,12 +48,7 @@
       text-align: left;
     }
 
-    /* Align the footer with the text above on the far left of the page */
-    .footer-wrap {
-      text-align: left;
-      padding-left: 20px; /* Align footer with the page content */
-    }
-
+    /* Align the footer links to the left */
     .footer-links {
       display: block;
     }
@@ -67,25 +56,17 @@
     .footer-item {
       display: block;
       margin-bottom: 10px; /* Space between footer items */
-    }
-
-    /* Ensure the "About" section and below are left-aligned */
-    .carrer-headline-wrap,
-    .work-position-container {
       text-align: left;
-      padding-left: 20px; /* Adjust padding to align with the top content */
-      margin-left: 0;  /* Ensure it aligns with the main content */
     }
 
-    /* Adjust container alignment for mobile */
+    /* Mobile adjustments for smaller screens */
     @media (max-width: 768px) {
-      .container {
-        padding-left: 10px;
-        padding-right: 10px;
-      }
-
+      .intro-wrap,
+      .carrer-headline-wrap,
+      .work-position-container,
       .footer-wrap {
         padding-left: 10px;
+        padding-right: 10px;
       }
     }
   </style>
@@ -101,6 +82,7 @@
 
   <div class="section">
     <div class="container">
+      <!-- Intro content with consistent left padding -->
       <div class="intro-wrap">
         <div class="name-text">Andreas Homer</div>
         <div class="paragraph-light"><br>🛠️ Founder and Operator</div>
@@ -111,12 +93,13 @@
   
     <div class="section">
       <div class="container">
+        <!-- "About" section with consistent left padding -->
         <div class="carrer-headline-wrap">
           <h2 class="heading">About</h2>
           <p class="paragraph-light">12+ years of experience leading teams to growth and exits in B2C/B2B products, spanning startups to Fortune 10 companies. Former D1 runner at USC. Bilingual dual-citizen of the USA and France.</p>
         </div>
 
-        <!-- Flex container for work positions -->
+        <!-- Flex container for work positions with consistent left padding -->
         <div class="work-position-container">
           <div id="w-node-_6d3577dd-e2ba-78fe-2782-f5c31aeb20cf-b4a76254" class="work-position-wrap">
             <div class="position-name-text">
