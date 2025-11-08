@@ -55,58 +55,64 @@
     }
 
     @media (max-width: 768px) {
-      .work-position-container {
-        flex-direction: column;
-      }
+      .work-position-container { flex-direction: column; }
     }
 
     /* Text Styles */
-    .paragraph-light.cc-position-name a {
-      color: white;
-      text-decoration: none;
-    }
+    .paragraph-light.cc-position-name a { color: white; text-decoration: none; }
+    .paragraph-light.cc-position-name { line-height: 1.6em; }
+    .paragraph-tiny.cc-paragraph-tiny-light { margin-top: 4px; }
 
-    .paragraph-light.cc-position-name {
-      line-height: 1.6em;
-    }
+    /* Reduced spacing between intro ("Passionate...") and About */
+    .carrer-headline-wrap { margin-top: 20px; } /* was 25/40 */
 
-    .paragraph-tiny.cc-paragraph-tiny-light {
-      margin-top: 4px;
-    }
-
-    /* Reduced spacing between intro and About section */
-    .carrer-headline-wrap {
-      margin-top: 25px; /* tighter than before */
-    }
-
-    /* MOBILE LEFT-ALIGN FIX */
+    /* ------------------------------ */
+    /* MOBILE LEFT-ALIGN - HARD OVERRIDE */
+    /* ------------------------------ */
     @media (max-width: 768px) {
-      .container {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
+      /* Unified left gutter */
+      .container { padding-left: 16px !important; padding-right: 16px !important; }
 
+      /* Kill any inherited center text alignment */
+      body,
+      .section,
+      .container,
       .intro-wrap,
-      .intro-wrap .name-text,
-      .intro-wrap .paragraph-light,
-      .heading-jumbo,
       .carrer-headline-wrap,
-      .carrer-headline-wrap .heading,
-      .carrer-headline-wrap .paragraph-light {
+      .work-position-container,
+      .work-position-wrap,
+      .footer-links,
+      .name-text,
+      .paragraph-light,
+      .heading-jumbo,
+      .heading {
         text-align: left !important;
       }
 
-      .work-position-container {
-        justify-content: flex-start;
+      /* If Webflow made these flex and centered, pin to left */
+      .intro-wrap,
+      .carrer-headline-wrap {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important; /* left edge */
       }
 
-      .work-position-wrap {
-        width: 100%;
-      }
-
+      /* Remove any auto margins that can visually center blocks */
+      .name-text,
+      .paragraph-light,
+      .heading-jumbo,
+      .heading,
+      .work-position-wrap,
       .footer-links {
-        text-align: left;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
       }
+
+      /* Tiles full width so copy lines up with the same gutter */
+      .work-position-wrap { width: 100% !important; }
+
+      /* Ensure footer links sit on the left */
+      .footer-links { justify-content: flex-start !important; }
     }
   </style>
 </head>
