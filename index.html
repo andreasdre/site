@@ -50,40 +50,45 @@
     .paragraph-light.cc-position-name { line-height: 1.6em; }
     .paragraph-tiny.cc-paragraph-tiny-light { margin-top: 4px; }
 
-    /* Tighter gap before About */
-    .carrer-headline-wrap { margin-top: 20px; }
+    /* ---------- Tighter gap between hero and About (desktop + mobile) ---------- */
+    /* Reduce bottom margin on the hero headline and top margin on About wrapper */
+    .heading-jumbo { margin-bottom: 12px !important; }
+    .carrer-headline-wrap { margin-top: 12px !important; }
 
-    /* ======= MOBILE HARD LEFT-ALIGN OVERRIDE ======= */
-    @media (max-width: 768px) {
-      /* Consistent left gutter */
-      .container { padding-left: 16px !important; padding-right: 16px !important; }
+    /* Remove any extra top spacing caused by nested .section inside .section */
+    .section .section { margin-top: 0 !important; padding-top: 0 !important; }
 
-      /* Force left alignment on hero + About and ALL their children */
+    /* ---------- MOBILE/NARROW: left alignment + unified gutter ---------- */
+    @media (max-width: 992px) {
+      /* Normalize container padding so sections share the same left edge */
+      .container { padding-left: 0 !important; padding-right: 0 !important; }
+
+      /* Apply the SAME gutter to all key blocks so they align perfectly */
       .intro-wrap,
-      .carrer-headline-wrap {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: flex-start !important;   /* left edge for flex children */
-        justify-content: flex-start !important;
+      .carrer-headline-wrap,
+      .work-position-container,
+      .footer-links {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+
+      /* Force left alignment and remove centering margins */
+      body, .section, .container,
+      .intro-wrap, .carrer-headline-wrap,
+      .work-position-container, .work-position-wrap,
+      .footer-links, .name-text, .paragraph-light,
+      .heading-jumbo, .heading {
         text-align: left !important;
         margin-left: 0 !important; margin-right: 0 !important;
-        width: 100% !important;
-      }
-      .intro-wrap *, .carrer-headline-wrap * {
-        text-align: left !important;
-        margin-left: 0 !important; margin-right: 0 !important;
       }
 
-      /* Prevent any centering coming from Webflow utilities */
-      .heading-jumbo, .heading, .name-text, .paragraph-light {
-        text-align: left !important;
+      /* If Webflow centers via flex, pin to left */
+      .intro-wrap, .carrer-headline-wrap {
+        display: flex !important; flex-direction: column !important; align-items: flex-start !important;
       }
 
-      /* Tiles full width, aligned to the same gutter */
-      .work-position-wrap { width: 100% !important; margin-left: 0 !important; margin-right: 0 !important; }
-
-      /* Footer */
-      .footer-links { text-align: left !important; justify-content: flex-start !important; }
+      /* Tiles full width so text lines up on the same gutter */
+      .work-position-wrap { width: 100% !important; }
     }
   </style>
 </head>
