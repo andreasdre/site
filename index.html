@@ -3,11 +3,23 @@
 <head>
   <meta charset="utf-8">
   <title>Andreas Homer</title>
-  <meta content="Andreas Homer" property="og:title">
-  <meta content="https://raw.githubusercontent.com/andreasdre/site/main/images/Preview.png" property="og:image">
-  <meta content="Andreas Homer" property="twitter:title">
-  <meta content="https://raw.githubusercontent.com/andreasdre/site/main/images/Preview.png" property="twitter:image">
-  <meta content="width=device-width, initial-scale=1" name="viewport">
+
+  <!-- Social Link Preview -->
+  <meta property="og:title" content="Andreas Homer">
+  <meta property="og:image" content="https://raw.githubusercontent.com/andreasdre/site/main/images/Preview.png">
+  <meta property="twitter:title" content="Andreas Homer">
+  <meta property="twitter:image" content="https://raw.githubusercontent.com/andreasdre/site/main/images/Preview.png">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/andreasdre/site/main/images/circle.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/andreasdre/site/main/images/circle.png">
+  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/andreasdre/site/main/images/circle.png">
+  <link rel="shortcut icon" href="https://raw.githubusercontent.com/andreasdre/site/main/images/circle.png">
+  <meta name="theme-color" content="#000000">
+
+  <!-- Fonts and Styles -->
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
   <link href="css/andreas-website-3c1e3b.webflow.css" rel="stylesheet" type="text/css">
@@ -15,26 +27,58 @@
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
   <script>
-    WebFont.load({ google: { families: ["Montserrat:100,200,300,400,500,600,700,800,900"] } });
+    WebFont.load({
+      google: { families: ["Montserrat:100,200,300,400,500,600,700,800,900"] }
+    });
   </script>
+
   <style>
+    /* Background Video */
     #background-video {
-      position: fixed; right: 0; bottom: 0;
-      min-width: 100%; min-height: 100%;
-      z-index: -1; object-fit: cover;
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
     }
+
+    /* Layout */
     .work-position-container {
-      display: flex; flex-direction: row; justify-content: space-between; flex-wrap: wrap;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
-    @media (max-width: 768px) { .work-position-container { flex-direction: column; } }
-    .paragraph-light.cc-position-name a { color: white; text-decoration: none; }
-    .paragraph-light.cc-position-name { line-height: 1.6em; }
+
+    @media (max-width: 768px) {
+      .work-position-container {
+        flex-direction: column;
+      }
+    }
+
+    /* Text Styles */
+    .paragraph-light.cc-position-name a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .paragraph-light.cc-position-name {
+      line-height: 1.6em;
+    }
+
+    .paragraph-tiny.cc-paragraph-tiny-light {
+      margin-top: 4px;
+    }
   </style>
 </head>
 
 <body class="body">
+  <!-- Background Video -->
   <video autoplay muted loop playsinline id="background-video">
     <source src="https://github.com/andreasdre/site/raw/main/images/Clouds.mp4" type="video/mp4">
+    Your browser does not support the video tag.
   </video>
 
   <div class="section">
@@ -43,7 +87,9 @@
         <div class="name-text">Andreas Homer</div>
         <div class="paragraph-light"><br>🛠️ Founder and Operator</div>
         <div class="paragraph-light">📍 San Francisco</div>
-        <h1 class="heading-jumbo">Passionate about the outdoors, photography, tennis, and building products that people love.</h1>
+        <h1 class="heading-jumbo">
+          Passionate about the outdoors, photography, tennis, and building products that people love.
+        </h1>
       </div>
     </div>
 
@@ -51,9 +97,13 @@
       <div class="container">
         <div class="carrer-headline-wrap">
           <h2 class="heading">About</h2>
-          <p class="paragraph-light">15+ years of experience leading teams to growth and exits in B2C/B2B products, spanning startups to Fortune 5 companies. Former D1 runner at USC. Olympic Club Tennis. Bilingual dual-citizen of the USA and France.</p>
+          <p class="paragraph-light">
+            15+ years of experience leading teams to growth and exits in B2C/B2B products, spanning startups to Fortune 5 companies.
+            Former D1 runner at USC. Olympic Club Tennis. Bilingual dual-citizen of the USA and France.
+          </p>
         </div>
 
+        <!-- Work Experience -->
         <div class="work-position-container">
 
           <!-- World -->
@@ -85,8 +135,7 @@
             </div>
             <div class="paragraph-light cc-position-name">
               <strong class="bold-text">Co-Founder, CEO</strong><br>
-              <a href="https://www.theinformation.com/articles/openai-looks-to-steal-googles-thunder-unicorn-ai-marketing-startup-typeface-acquires-consumer-chatbot-app">(acq. by Typeface AI)</a><br>
-              <a href="https://www.theinformation.com/articles/openai-looks-to-steal-googles-thunder-unicorn-ai-marketing-startup-typeface-acquires-consumer-chatbot-app">Cypher</a>&nbsp;and&nbsp;<a href="https://www.fastcompany.com/90567394/how-much-carbon-has-your-travel-created-this-app-scans-your-inbox-to-figure-it-out">Aerial</a><br>
+              <a href="https://www.theinformation.com/articles/openai-looks-to-steal-googles-thunder-unicorn-ai-marketing-startup-typeface-acquires-consumer-chatbot-app">(acq. by Typeface AI)</a>
             </div>
             <div class="paragraph-tiny cc-paragraph-tiny-light">2020 — 2024</div>
           </div>
@@ -96,7 +145,9 @@
             <div class="position-name-text">
               <a href="https://www.theverge.com/2015/1/29/7936081/microsoft-outlook-app-ios-android-features" target="_blank" class="link-4">Microsoft</a>
             </div>
-            <div class="paragraph-light cc-position-name"><strong class="bold-text">Director, BD</strong></div>
+            <div class="paragraph-light cc-position-name">
+              <strong class="bold-text">Director, BD</strong>
+            </div>
             <div class="paragraph-tiny cc-paragraph-tiny-light">2015 — 2020</div>
           </div>
 
@@ -105,23 +156,9 @@
             <div class="position-name-text">
               <a href="https://www.vox.com/2014/12/1/11633386/microsoft-buys-mobile-email-startup-acompli-for-more-than-200-million" target="_blank" class="link-4">Acompli</a>
             </div>
-            <div class="paragraph-light cc-position-name"><strong class="bold-text">BD, Product (acq. by Microsoft)</strong></div>
+            <div class="paragraph-light cc-position-name">
+              <strong class="bold-text">BD, Product</strong><br>
+              (acq. by Microsoft)
+            </div>
             <div class="paragraph-tiny cc-paragraph-tiny-light">2014 — 2015</div>
           </div>
-
-          <!-- Path -->
-          <div class="work-position-wrap">
-            <div class="position-name-text">
-              <a href="https://www.wsj.com/articles/daum-kakao-to-buy-paths-social-media-services-1432865518" target="_blank" class="link-4">Path</a>
-            </div>
-            <div class="paragraph-light cc-position-name"><strong class="bold-text">BD, Product (acq. by KakaoTalk)</strong></div>
-            <div class="paragraph-tiny cc-paragraph-tiny-light">2012 — 2014</div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-wrap">
-    <d
