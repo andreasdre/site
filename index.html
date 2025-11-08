@@ -28,91 +28,62 @@
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
   <script>
-    WebFont.load({
-      google: { families: ["Montserrat:100,200,300,400,500,600,700,800,900"] }
-    });
+    WebFont.load({ google: { families: ["Montserrat:100,200,300,400,500,600,700,800,900"] } });
   </script>
 
   <style>
     /* Background Video */
     #background-video {
       position: fixed;
-      right: 0;
-      bottom: 0;
-      min-width: 100%;
-      min-height: 100%;
-      z-index: -1;
-      object-fit: cover;
+      right: 0; bottom: 0;
+      min-width: 100%; min-height: 100%;
+      z-index: -1; object-fit: cover;
     }
 
-    /* Layout */
+    /* Work grid */
     .work-position-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 24px;
+      display: flex; flex-direction: row; justify-content: space-between; flex-wrap: wrap; gap: 24px;
     }
+    @media (max-width: 768px) { .work-position-container { flex-direction: column; } }
 
-    @media (max-width: 768px) {
-      .work-position-container { flex-direction: column; }
-    }
-
-    /* Text Styles */
     .paragraph-light.cc-position-name a { color: white; text-decoration: none; }
     .paragraph-light.cc-position-name { line-height: 1.6em; }
     .paragraph-tiny.cc-paragraph-tiny-light { margin-top: 4px; }
 
-    /* Reduced spacing between intro ("Passionate...") and About */
-    .carrer-headline-wrap { margin-top: 20px; } /* was 25/40 */
+    /* Tighter gap before About */
+    .carrer-headline-wrap { margin-top: 20px; }
 
-    /* ------------------------------ */
-    /* MOBILE LEFT-ALIGN - HARD OVERRIDE */
-    /* ------------------------------ */
+    /* ======= MOBILE HARD LEFT-ALIGN OVERRIDE ======= */
     @media (max-width: 768px) {
-      /* Unified left gutter */
+      /* Consistent left gutter */
       .container { padding-left: 16px !important; padding-right: 16px !important; }
 
-      /* Kill any inherited center text alignment */
-      body,
-      .section,
-      .container,
-      .intro-wrap,
-      .carrer-headline-wrap,
-      .work-position-container,
-      .work-position-wrap,
-      .footer-links,
-      .name-text,
-      .paragraph-light,
-      .heading-jumbo,
-      .heading {
-        text-align: left !important;
-      }
-
-      /* If Webflow made these flex and centered, pin to left */
+      /* Force left alignment on hero + About and ALL their children */
       .intro-wrap,
       .carrer-headline-wrap {
         display: flex !important;
         flex-direction: column !important;
-        align-items: flex-start !important; /* left edge */
+        align-items: flex-start !important;   /* left edge for flex children */
+        justify-content: flex-start !important;
+        text-align: left !important;
+        margin-left: 0 !important; margin-right: 0 !important;
+        width: 100% !important;
+      }
+      .intro-wrap *, .carrer-headline-wrap * {
+        text-align: left !important;
+        margin-left: 0 !important; margin-right: 0 !important;
       }
 
-      /* Remove any auto margins that can visually center blocks */
-      .name-text,
-      .paragraph-light,
-      .heading-jumbo,
-      .heading,
-      .work-position-wrap,
-      .footer-links {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
+      /* Prevent any centering coming from Webflow utilities */
+      .heading-jumbo, .heading, .name-text, .paragraph-light {
+        text-align: left !important;
       }
 
-      /* Tiles full width so copy lines up with the same gutter */
-      .work-position-wrap { width: 100% !important; }
+      /* Tiles full width, aligned to the same gutter */
+      .work-position-wrap { width: 100% !important; margin-left: 0 !important; margin-right: 0 !important; }
 
-      /* Ensure footer links sit on the left */
-      .footer-links { justify-content: flex-start !important; }
+      /* Footer */
+      .footer-links { text-align: left !important; justify-content: flex-start !important; }
     }
   </style>
 </head>
@@ -154,9 +125,7 @@
             <div class="position-name-text">
               <a href="http://world.org/" target="_blank" class="link-4">World</a>
             </div>
-            <div class="paragraph-light cc-position-name">
-              <strong class="bold-text">Partnerships</strong>
-            </div>
+            <div class="paragraph-light cc-position-name"><strong class="bold-text">Partnerships</strong></div>
             <div class="paragraph-tiny cc-paragraph-tiny-light">2025 — Present</div>
           </div>
 
@@ -165,9 +134,7 @@
             <div class="position-name-text">
               <a href="https://www.shopify.com/" target="_blank" class="link-4">Shopify</a>
             </div>
-            <div class="paragraph-light cc-position-name">
-              <strong class="bold-text">Director, Partnerships</strong>
-            </div>
+            <div class="paragraph-light cc-position-name"><strong class="bold-text">Director, Partnerships</strong></div>
             <div class="paragraph-tiny cc-paragraph-tiny-light">2024 — 2025</div>
           </div>
 
@@ -188,9 +155,7 @@
             <div class="position-name-text">
               <a href="https://www.theverge.com/2015/1/29/7936081/microsoft-outlook-app-ios-android-features" target="_blank" class="link-4">Microsoft</a>
             </div>
-            <div class="paragraph-light cc-position-name">
-              <strong class="bold-text">Director, BD</strong>
-            </div>
+            <div class="paragraph-light cc-position-name"><strong class="bold-text">Director, BD</strong></div>
             <div class="paragraph-tiny cc-paragraph-tiny-light">2015 — 2020</div>
           </div>
 
