@@ -76,7 +76,37 @@
 
     /* Reduced spacing between intro and About section */
     .carrer-headline-wrap {
-      margin-top: 40px; /* tighter than default */
+      margin-top: 25px; /* tighter than before */
+    }
+
+    /* MOBILE LEFT-ALIGN FIX */
+    @media (max-width: 768px) {
+      .container {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .intro-wrap,
+      .intro-wrap .name-text,
+      .intro-wrap .paragraph-light,
+      .heading-jumbo,
+      .carrer-headline-wrap,
+      .carrer-headline-wrap .heading,
+      .carrer-headline-wrap .paragraph-light {
+        text-align: left !important;
+      }
+
+      .work-position-container {
+        justify-content: flex-start;
+      }
+
+      .work-position-wrap {
+        width: 100%;
+      }
+
+      .footer-links {
+        text-align: left;
+      }
     }
   </style>
 </head>
