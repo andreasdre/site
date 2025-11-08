@@ -53,22 +53,29 @@
     /* ---------- Default tighter gap (desktop) ---------- */
     .heading-jumbo { margin-bottom: 12px !important; }
     .carrer-headline-wrap { margin-top: 12px !important; }
-    .section .section { margin-top: 0 !important; padding-top: 0 !important; }
 
     /* ---------- MOBILE/NARROW ---------- */
     @media (max-width: 992px) {
-      /* Remove all padding/margin from nested sections */
+
+      /* HARD RESET: remove all margins/paddings from nested elements between intro and About */
+      .section,
       .section .section,
-      .section .container {
+      .section .container,
+      .container,
+      .intro-wrap,
+      .carrer-headline-wrap {
         margin-top: 0 !important;
+        margin-bottom: 0 !important;
         padding-top: 0 !important;
         padding-bottom: 0 !important;
       }
 
-      /* Remove default container padding */
-      .container { padding-left: 0 !important; padding-right: 0 !important; }
+      /* Minimal controlled spacing */
+      .heading-jumbo { margin-bottom: 4px !important; }
+      .carrer-headline-wrap { margin-top: 0 !important; }
 
-      /* Unified gutters */
+      /* Normalize gutters */
+      .container { padding-left: 0 !important; padding-right: 0 !important; }
       .intro-wrap,
       .carrer-headline-wrap,
       .work-position-container,
@@ -95,10 +102,6 @@
       /* Tighter spacing for work items */
       .work-position-wrap { width: 100% !important; margin-bottom: 8px !important; }
       .work-position-wrap:last-child { margin-bottom: 0 !important; }
-
-      /* Tighter vertical spacing between hero and About */
-      .heading-jumbo { margin-bottom: 0 !important; }
-      .carrer-headline-wrap { margin-top: 0 !important; }
     }
   </style>
 </head>
