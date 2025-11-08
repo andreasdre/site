@@ -57,7 +57,7 @@
     /* ---------- MOBILE/NARROW ---------- */
     @media (max-width: 992px) {
 
-      /* HARD RESET: remove all margins/paddings from nested elements between intro and About */
+      /* HARD RESET to control spacing properly */
       .section,
       .section .section,
       .section .container,
@@ -70,9 +70,10 @@
         padding-bottom: 0 !important;
       }
 
-      /* Minimal controlled spacing */
-      .heading-jumbo { margin-bottom: 4px !important; }
-      .carrer-headline-wrap { margin-top: 0 !important; }
+      /* Gentle spacing between major sections */
+      .heading-jumbo { margin-bottom: 10px !important; } /* adds space between Passionate... and About */
+      .carrer-headline-wrap { margin-top: 10px !important; } /* About starts slightly lower */
+      .carrer-headline-wrap p { margin-bottom: 10px !important; } /* space between About paragraph and World */
 
       /* Normalize gutters */
       .container { padding-left: 0 !important; padding-right: 0 !important; }
