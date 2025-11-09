@@ -32,6 +32,7 @@
   <style>
     :root {
       --gutter-mobile: 16px;
+      --gutter-desktop: 24px; /* consistent desktop left margin */
     }
 
     /* Background video */
@@ -141,10 +142,35 @@
         flex-direction: column;
         align-items: flex-start !important;
         gap: 4px;
-        /* Remove any inner offsets so only the shared gutter applies */
         border: 0; outline: 0;
       }
       .footer-item { display: block; margin: 2px 0; }
+    }
+
+    /* ---------- DESKTOP/WIDE ---------- */
+    @media (min-width: 993px) {
+      /* Align footer left edge with About and World */
+      .intro-wrap,
+      .carrer-headline-wrap,
+      .work-position-container,
+      .footer-links {
+        padding-left: var(--gutter-desktop) !important;
+        padding-right: var(--gutter-desktop) !important;
+        box-sizing: border-box;
+      }
+
+      .footer-wrap, .footer-wrap .container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start !important;
+        text-align: left !important;
+        margin-left: 0 !important;
+      }
     }
   </style>
 </head>
