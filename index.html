@@ -96,10 +96,8 @@
 
     /* ---------- DESKTOP/WIDE ---------- */
     @media (min-width: 993px) {
-      /* Collapse unexpected defaults, then add a small, comfy gap */
-      .intro-wrap h1.heading-jumbo { margin-bottom: 0 !important; }
+      /* Neutralize hidden defaults between hero and About */
       .intro-wrap { margin-bottom: 0 !important; padding-bottom: 0 !important; }
-
       .carrer-headline-wrap { margin-top: 0 !important; padding-top: 0 !important; }
       .carrer-headline-wrap .heading { margin-top: 0 !important; }
 
@@ -110,9 +108,9 @@
         margin-top: 0 !important; padding-top: 0 !important;
       }
 
-      /* Final tuned spacing: 6px total between hero and About */
-      .intro-wrap h1.heading-jumbo + * { margin-top: 3px !important; }
-      .carrer-headline-wrap { margin-top: 3px !important; }
+      /* Desired desktop spacing: hero -> About */
+      .intro-wrap h1.heading-jumbo { margin-bottom: 10px !important; } /* adjust this if you want more/less */
+      .carrer-headline-wrap { margin-top: 8px !important; }
 
       /* Center footer on desktop */
       .footer-links {
