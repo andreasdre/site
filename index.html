@@ -18,140 +18,136 @@
   <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/andreasdre/site/main/images/circle.png">
   <meta name="theme-color" content="#000000">
 
-  <!-- Mona Sans (official from GitHub CDN) -->
+  <!-- Fonts & Styles -->
+  <link href="css/normalize.css" rel="stylesheet">
+  <link href="css/webflow.css" rel="stylesheet">
+  <link href="css/andreas-website-3c1e3b.webflow.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+  <script>
+    WebFont.load({ google: { families: ["Montserrat:100,200,300,400,500,600,700,800,900"] } });
+  </script>
+
   <style>
-  @font-face {
-    font-family: 'Mona Sans';
-    src:
-      url('https://cdn.jsdelivr.net/gh/github/mona-sans/fonts/Mona-Sans.woff2') format('woff2'),
-      url('https://cdn.jsdelivr.net/gh/github/mona-sans/fonts/Mona-Sans.woff') format('woff');
-    font-weight: 200 900;
-    font-display: swap;
-    font-style: normal;
-  }
+    /* Background video */
+    #background-video {
+      position: fixed;
+      right: 0; bottom: 0;
+      min-width: 100%; min-height: 100%;
+      z-index: -1; object-fit: cover;
+    }
 
-  body {
-    font-family: 'Mona Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-    color: white;
-    background-color: black;
-    margin: 0;
-    padding: 0;
-  }
-
-  /* Background video */
-  #background-video {
-    position: fixed;
-    right: 0; bottom: 0;
-    min-width: 100%; min-height: 100%;
-    z-index: -1; object-fit: cover;
-  }
-
-  /* Work grid */
-  .work-position-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 24px;
-  }
-
-  @media (max-width: 768px) {
+    /* Work grid */
     .work-position-container {
-      flex-direction: column;
-      gap: 12px;
-    }
-  }
-
-  .paragraph-light.cc-position-name a {
-    color: white;
-    text-decoration: none;
-  }
-
-  .paragraph-light.cc-position-name {
-    line-height: 1.6em;
-  }
-
-  .paragraph-tiny.cc-paragraph-tiny-light {
-    margin-top: 4px;
-  }
-
-  /* Default tighter gap (desktop) */
-  .heading-jumbo { margin-bottom: 12px !important; }
-  .carrer-headline-wrap { margin-top: 12px !important; }
-
-  /* ---------- MOBILE/NARROW ---------- */
-  @media (max-width: 992px) {
-
-    /* Reset all nested spacing */
-    .section,
-    .section .section,
-    .section .container,
-    .container,
-    .intro-wrap,
-    .carrer-headline-wrap {
-      margin-top: 0 !important;
-      margin-bottom: 0 !important;
-      padding-top: 0 !important;
-      padding-bottom: 0 !important;
-    }
-
-    /* Controlled spacing */
-    .heading-jumbo { margin-bottom: 10px !important; } /* Passionate → About */
-    .carrer-headline-wrap { margin-top: 10px !important; }
-    .work-position-container { padding-top: 16px !important; } /* About → World */
-
-    /* Normalize gutters */
-    .container { padding-left: 0 !important; padding-right: 0 !important; }
-    .intro-wrap,
-    .carrer-headline-wrap,
-    .work-position-container,
-    .footer-links {
-      padding-left: 16px !important;
-      padding-right: 16px !important;
-    }
-
-    /* Left alignment everywhere */
-    body, .section, .container,
-    .intro-wrap, .carrer-headline-wrap,
-    .work-position-container, .work-position-wrap,
-    .footer-links, .name-text, .paragraph-light,
-    .heading-jumbo, .heading {
-      text-align: left !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-    }
-
-    /* Footer alignment */
-    .footer-wrap {
-      margin-top: 20px !important;
-      padding-left: 16px !important;
-    }
-    .footer-links {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start !important;
-      gap: 4px;
-      text-align: left !important;
-    }
-    .footer-item {
-      display: block;
-      margin: 2px 0;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
     }
 
-    /* Flex alignment */
-    .intro-wrap, .carrer-headline-wrap {
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: flex-start !important;
+    @media (max-width: 768px) {
+      .work-position-container {
+        flex-direction: column;
+        gap: 12px;
+      }
     }
 
-    /* Work spacing tweaks */
-    .work-position-wrap {
-      width: 100% !important;
-      margin-bottom: 8px !important;
+    .paragraph-light.cc-position-name a {
+      color: white;
+      text-decoration: none;
     }
-    .work-position-wrap:last-child { margin-bottom: 0 !important; }
-  }
+
+    .paragraph-light.cc-position-name {
+      line-height: 1.6em;
+    }
+
+    .paragraph-tiny.cc-paragraph-tiny-light {
+      margin-top: 4px;
+    }
+
+    /* Default tighter gap (desktop) */
+    .heading-jumbo { margin-bottom: 12px !important; }
+    .carrer-headline-wrap { margin-top: 12px !important; }
+
+    /* ---------- MOBILE/NARROW ---------- */
+    @media (max-width: 992px) {
+
+      /* Reset all nested spacing */
+      .section,
+      .section .section,
+      .section .container,
+      .container,
+      .intro-wrap,
+      .carrer-headline-wrap {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+      }
+
+      /* Controlled spacing */
+      .heading-jumbo { margin-bottom: 10px !important; } /* Between Passionate… and About */
+      .carrer-headline-wrap { margin-top: 10px !important; }
+      .carrer-headline-wrap p { margin-bottom: 0 !important; } /* reset internal margin */
+      .work-position-container { padding-top: 16px !important; } /* space between About and World */
+
+      /* Normalize gutters */
+      .container { padding-left: 0 !important; padding-right: 0 !important; }
+      .intro-wrap,
+      .carrer-headline-wrap,
+      .work-position-container,
+      .footer-links {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+
+      /* Left alignment everywhere */
+      body, .section, .container,
+      .intro-wrap, .carrer-headline-wrap,
+      .work-position-container, .work-position-wrap,
+      .footer-links, .name-text, .paragraph-light,
+      .heading-jumbo, .heading {
+        text-align: left !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+
+      /* Footer alignment + spacing */
+      .footer-wrap {
+        margin-top: 20px !important;
+        padding-left: 16px !important;
+      }
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 4px;
+        text-align: left !important;
+      }
+      .footer-item {
+        display: block;
+        margin: 2px 0;
+      }
+
+      /* Flex alignment */
+      .intro-wrap, .carrer-headline-wrap {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+      }
+
+      /* Work spacing tweaks */
+      .work-position-wrap {
+        width: 100% !important;
+        margin-bottom: 8px !important;
+      }
+
+      .work-position-wrap:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
   </style>
 </head>
 
