@@ -30,107 +30,121 @@
   </script>
 
   <style>
-    :root{
-      --gutter-mobile:16px;
-      --gutter-desktop:24px; /* Desktop left edge for intro, about, work, footer */
-      --content-max:1100px;  /* Optional: constrain width consistently */
+    :root {
+      --gutter-mobile: 16px;
     }
 
     /* Background video */
-    #background-video{
-      position:fixed; right:0; bottom:0;
-      min-width:100%; min-height:100%;
-      z-index:-1; object-fit:cover; background-color:black;
-    }
-
-    /* Keep a consistent content width and center, but align left edges via padding */
-    .content-wrap{
-      max-width:var(--content-max);
-      margin:0 auto;
-      box-sizing:border-box;
+    #background-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+      background-color: black;
     }
 
     /* Work grid */
-    .work-position-container{
-      display:flex; flex-direction:row; justify-content:space-between; flex-wrap:wrap; gap:24px;
-      box-sizing:border-box;
+    .work-position-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+      box-sizing: border-box;
     }
 
-    .paragraph-light.cc-position-name a{ color:white; text-decoration:none; }
-    .paragraph-light.cc-position-name{ line-height:1.6em; }
-    .paragraph-tiny.cc-paragraph-tiny-light{ margin-top:4px; }
+    @media (max-width: 768px) {
+      .work-position-container {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
 
-    /* Desktop spacing defaults */
-    .heading-jumbo{ margin-bottom:12px !important; }
-    .carrer-headline-wrap{ margin-top:12px !important; }
+    .paragraph-light.cc-position-name a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .paragraph-light.cc-position-name { line-height: 1.6em; }
+    .paragraph-tiny.cc-paragraph-tiny-light { margin-top: 4px; }
+
+    /* Desktop spacing */
+    .heading-jumbo { margin-bottom: 12px !important; }
+    .carrer-headline-wrap { margin-top: 12px !important; }
 
     /* ---------- MOBILE/NARROW ---------- */
-    @media (max-width: 992px){
-      /* Collapse framework spacing so we control it */
-      .section, .section .section, .section .container, .container,
-      .intro-wrap, .carrer-headline-wrap, .footer-wrap, .footer-wrap .container{
-        margin:0 !important; padding:0 !important; box-sizing:border-box;
+    @media (max-width: 992px) {
+      /* Reset wrappers so we control spacing */
+      .section,
+      .section .section,
+      .section .container,
+      .container,
+      .intro-wrap,
+      .carrer-headline-wrap,
+      .footer-wrap,
+      .footer-wrap .container {
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box;
       }
 
-      /* Left/right gutters for aligned blocks */
-      .content-wrap,
-      .intro-wrap, .carrer-headline-wrap,
-      .work-position-container, .footer-links{
-        padding-left:var(--gutter-mobile) !important;
-        padding-right:var(--gutter-mobile) !important;
+      /* Apply one consistent gutter to the blocks that should align */
+      .intro-wrap,
+      .carrer-headline-wrap,
+      .work-position-container,
+      .footer-links {
+        padding-left: var(--gutter-mobile) !important;
+        padding-right: var(--gutter-mobile) !important;
+        box-sizing: border-box;
       }
 
       /* Vertical rhythm */
-      .heading-jumbo{ margin-bottom:10px !important; }
-      .carrer-headline-wrap{ margin-top:10px !important; }
-      .carrer-headline-wrap p{ margin-bottom:0 !important; }
-      .work-position-container{ padding-top:16px !important; }
+      .heading-jumbo { margin-bottom: 10px !important; }
+      .carrer-headline-wrap { margin-top: 10px !important; }
+      .carrer-headline-wrap p { margin-bottom: 0 !important; }
+      .work-position-container { padding-top: 16px !important; }
 
-      /* Column layout for work list */
-      .work-position-container{ flex-direction:column; gap:12px; }
-      .work-position-wrap{ width:100% !important; margin-bottom:8px !important; }
-      .work-position-wrap:last-child{ margin-bottom:0 !important; }
-
-      /* Left align all text */
+      /* Left alignment everywhere */
       body, .section, .container,
-      .intro-wrap, .carrer-headline-wrap, .work-position-container,
-      .work-position-wrap, .name-text, .paragraph-light,
-      .heading-jumbo, .heading, .footer-links{
-        text-align:left !important; margin-left:0 !important; margin-right:0 !important;
-      }
-
-      /* Footer layout */
-      .footer-wrap{ margin-top:20px !important; }
-      .footer-links{
-        display:flex; flex-direction:column; align-items:flex-start !important; gap:4px;
-        padding:0 !important; margin:0 !important;
-      }
-      .footer-item{ display:block; margin:2px 0; }
-    }
-
-    /* ---------- DESKTOP/WIDE ---------- */
-    @media (min-width: 993px){
-      /* Neutralize container padding so we use one consistent gutter */
-      .container{ padding-left:0 !important; padding-right:0 !important; }
-
-      /* Apply same left gutter to each aligned block */
-      .content-wrap,
       .intro-wrap, .carrer-headline-wrap,
-      .work-position-container, .footer-links{
-        padding-left:var(--gutter-desktop) !important;
-        padding-right:var(--gutter-desktop) !important;
-        box-sizing:border-box;
+      .work-position-container, .work-position-wrap,
+      .name-text, .paragraph-light,
+      .heading-jumbo, .heading,
+      .footer-links {
+        text-align: left !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
       }
 
-      /* Ensure footer wrapper doesn't sneak in extra padding */
-      .footer-wrap, .footer-wrap .container{
-        padding-left:0 !important; padding-right:0 !important;
+      /* Flex for headers */
+      .intro-wrap, .carrer-headline-wrap {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
       }
 
-      /* Keep text left aligned */
-      .intro-wrap, .carrer-headline-wrap, .footer-links{
-        display:flex; flex-direction:column; align-items:flex-start;
+      /* Work item spacing */
+      .work-position-wrap {
+        width: 100% !important;
+        margin-bottom: 8px !important;
+        box-sizing: border-box;
       }
+      .work-position-wrap:last-child { margin-bottom: 0 !important; }
+
+      /* Footer spacing and alignment */
+      .footer-wrap { margin-top: 20px !important; }
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 4px;
+        /* Remove any inner offsets so only the shared gutter applies */
+        border: 0; outline: 0;
+      }
+      .footer-item { display: block; margin: 2px 0; }
     }
   </style>
 </head>
@@ -144,101 +158,97 @@
 
   <div class="section">
     <div class="container">
-      <div class="content-wrap">
-        <div class="intro-wrap">
-          <div class="name-text">Andreas Homer</div>
-          <div class="paragraph-light"><br>🛠️ Founder and Operator</div>
-          <div class="paragraph-light">📍 San Francisco</div>
-          <h1 class="heading-jumbo">
-            Passionate about the outdoors, photography, tennis, and building products that people love.
-          </h1>
-        </div>
+      <div class="intro-wrap">
+        <div class="name-text">Andreas Homer</div>
+        <div class="paragraph-light"><br>🛠️ Founder and Operator</div>
+        <div class="paragraph-light">📍 San Francisco</div>
+        <h1 class="heading-jumbo">
+          Passionate about the outdoors, photography, tennis, and building products that people love.
+        </h1>
       </div>
     </div>
 
     <div class="section">
       <div class="container">
-        <div class="content-wrap">
-          <div class="carrer-headline-wrap">
-            <h2 class="heading">About</h2>
-            <p class="paragraph-light">
-              15+ years of experience leading teams to growth and exits in B2C/B2B products, spanning startups to Fortune 5 companies.
-              Former D1 runner at USC. Olympic Club Tennis. Bilingual dual-citizen of the USA and France.
-            </p>
+        <div class="carrer-headline-wrap">
+          <h2 class="heading">About</h2>
+          <p class="paragraph-light">
+            15+ years of experience leading teams to growth and exits in B2C/B2B products, spanning startups to Fortune 5 companies.
+            Former D1 runner at USC. Olympic Club Tennis. Bilingual dual-citizen of the USA and France.
+          </p>
+        </div>
+
+        <!-- Work Experience -->
+        <div class="work-position-container">
+
+          <div class="work-position-wrap">
+            <div class="position-name-text">
+              <a href="http://world.org/" target="_blank" class="link-4">World</a>
+            </div>
+            <div class="paragraph-light cc-position-name"><strong class="bold-text">Partnerships</strong></div>
+            <div class="paragraph-tiny cc-paragraph-tiny-light">2025 — Present</div>
           </div>
 
-          <!-- Work Experience -->
-          <div class="work-position-container">
-            <div class="work-position-wrap">
-              <div class="position-name-text">
-                <a href="http://world.org/" target="_blank" class="link-4">World</a>
-              </div>
-              <div class="paragraph-light cc-position-name"><strong class="bold-text">Partnerships</strong></div>
-              <div class="paragraph-tiny cc-paragraph-tiny-light">2025 — Present</div>
+          <div class="work-position-wrap">
+            <div class="position-name-text">
+              <a href="https://www.shopify.com/" target="_blank" class="link-4">Shopify</a>
             </div>
+            <div class="paragraph-light cc-position-name"><strong class="bold-text">Director, Partnerships</strong></div>
+            <div class="paragraph-tiny cc-paragraph-tiny-light">2024 — 2025</div>
+          </div>
 
-            <div class="work-position-wrap">
-              <div class="position-name-text">
-                <a href="https://www.shopify.com/" target="_blank" class="link-4">Shopify</a>
-              </div>
-              <div class="paragraph-light cc-position-name"><strong class="bold-text">Director, Partnerships</strong></div>
-              <div class="paragraph-tiny cc-paragraph-tiny-light">2024 — 2025</div>
+          <div class="work-position-wrap">
+            <div class="position-name-text">
+              <a href="https://www.theinformation.com/articles/openai-looks-to-steal-googles-thunder-unicorn-ai-marketing-startup-typeface-acquires-consumer-chatbot-app" target="_blank" class="link-4">Cypher</a>
             </div>
+            <div class="paragraph-light cc-position-name">
+              <strong class="bold-text">Co-Founder, CEO</strong><br>
+              <a href="https://www.theinformation.com/articles/openai-looks-to-steal-googles-thunder-unicorn-ai-marketing-startup-typeface-acquires-consumer-chatbot-app">(acq. by Typeface AI)</a>
+            </div>
+            <div class="paragraph-tiny cc-paragraph-tiny-light">2020 — 2024</div>
+          </div>
 
-            <div class="work-position-wrap">
-              <div class="position-name-text">
-                <a href="https://www.theinformation.com/articles/openai-looks-to-steal-googles-thunder-unicorn-ai-marketing-startup-typeface-acquires-consumer-chatbot-app" target="_blank" class="link-4">Cypher</a>
-              </div>
-              <div class="paragraph-light cc-position-name">
-                <strong class="bold-text">Co-Founder, CEO</strong><br>
-                <a href="https://www.theinformation.com/articles/openai-looks-to-steal-googles-thunder-unicorn-ai-marketing-startup-typeface-acquires-consumer-chatbot-app">(acq. by Typeface AI)</a>
-              </div>
-              <div class="paragraph-tiny cc-paragraph-tiny-light">2020 — 2024</div>
+          <div class="work-position-wrap">
+            <div class="position-name-text">
+              <a href="https://www.theverge.com/2015/1/29/7936081/microsoft-outlook-app-ios-android-features" target="_blank" class="link-4">Microsoft</a>
             </div>
+            <div class="paragraph-light cc-position-name"><strong class="bold-text">Director, BD</strong></div>
+            <div class="paragraph-tiny cc-paragraph-tiny-light">2015 — 2020</div>
+          </div>
 
-            <div class="work-position-wrap">
-              <div class="position-name-text">
-                <a href="https://www.theverge.com/2015/1/29/7936081/microsoft-outlook-app-ios-android-features" target="_blank" class="link-4">Microsoft</a>
-              </div>
-              <div class="paragraph-light cc-position-name"><strong class="bold-text">Director, BD</strong></div>
-              <div class="paragraph-tiny cc-paragraph-tiny-light">2015 — 2020</div>
+          <div class="work-position-wrap">
+            <div class="position-name-text">
+              <a href="https://www.vox.com/2014/12/1/11633386/microsoft-buys-mobile-email-startup-acompli-for-more-than-200-million" target="_blank" class="link-4">Acompli</a>
             </div>
+            <div class="paragraph-light cc-position-name">
+              <strong class="bold-text">BD, Product</strong><br>
+              (acq. by Microsoft)
+            </div>
+            <div class="paragraph-tiny cc-paragraph-tiny-light">2014 — 2015</div>
+          </div>
 
-            <div class="work-position-wrap">
-              <div class="position-name-text">
-                <a href="https://www.vox.com/2014/12/1/11633386/microsoft-buys-mobile-email-startup-acompli-for-more-than-200-million" target="_blank" class="link-4">Acompli</a>
-              </div>
-              <div class="paragraph-light cc-position-name">
-                <strong class="bold-text">BD, Product</strong><br>
-                (acq. by Microsoft)
-              </div>
-              <div class="paragraph-tiny cc-paragraph-tiny-light">2014 — 2015</div>
+          <div class="work-position-wrap">
+            <div class="position-name-text">
+              <a href="https://www.wsj.com/articles/daum-kakao-to-buy-paths-social-media-services-1432865518" target="_blank" class="link-4">Path</a>
             </div>
+            <div class="paragraph-light cc-position-name">
+              <strong class="bold-text">BD, Product</strong><br>
+              (acq. by KakaoTalk)
+            </div>
+            <div class="paragraph-tiny cc-paragraph-tiny-light">2012 — 2014</div>
+          </div>
 
-            <div class="work-position-wrap">
-              <div class="position-name-text">
-                <a href="https://www.wsj.com/articles/daum-kakao-to-buy-paths-social-media-services-1432865518" target="_blank" class="link-4">Path</a>
-              </div>
-              <div class="paragraph-light cc-position-name">
-                <strong class="bold-text">BD, Product</strong><br>
-                (acq. by KakaoTalk)
-              </div>
-              <div class="paragraph-tiny cc-paragraph-tiny-light">2012 — 2014</div>
-            </div>
-          </div><!-- /work-position-container -->
-        </div><!-- /content-wrap -->
-      </div><!-- /container -->
-    </div><!-- /section -->
-  </div><!-- /section (outer) -->
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="footer-wrap">
     <div class="container">
-      <div class="content-wrap">
-        <div class="footer-links">
-          <a href="mailto:andreas.alexi@gmail.com" class="footer-item">EMAIL</a>
-          <a href="https://twitter.com/andreas_dre" target="_blank" class="footer-item">Twitter</a>
-          <a href="https://www.linkedin.com/in/andreasbh/" target="_blank" class="footer-item">LinkedIn</a>
-        </div>
+      <div class="footer-links">
+        <a href="mailto:andreas.alexi@gmail.com" class="footer-item">EMAIL</a>
+        <a href="https://twitter.com/andreas_dre" target="_blank" class="footer-item">Twitter</a>
+        <a href="https://www.linkedin.com/in/andreasbh/" target="_blank" class="footer-item">LinkedIn</a>
       </div>
     </div>
   </div>
