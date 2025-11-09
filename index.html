@@ -30,173 +30,106 @@
   </script>
 
   <style>
-    :root {
-      --gutter-mobile: 16px;
-      --gutter-desktop: 24px;
-      --content-max: 1100px;
+    :root{
+      --gutter-mobile:16px;
+      --gutter-desktop:24px; /* Desktop left edge for intro, about, work, footer */
+      --content-max:1100px;  /* Optional: constrain width consistently */
     }
 
     /* Background video */
-    #background-video {
-      position: fixed;
-      right: 0;
-      bottom: 0;
-      min-width: 100%;
-      min-height: 100%;
-      z-index: -1;
-      object-fit: cover;
-      background-color: black;
+    #background-video{
+      position:fixed; right:0; bottom:0;
+      min-width:100%; min-height:100%;
+      z-index:-1; object-fit:cover; background-color:black;
     }
 
-    /* Keep consistent content width */
-    .content-wrap {
-      max-width: var(--content-max);
-      margin: 0 auto;
-      box-sizing: border-box;
+    /* Keep a consistent content width and center, but align left edges via padding */
+    .content-wrap{
+      max-width:var(--content-max);
+      margin:0 auto;
+      box-sizing:border-box;
     }
 
     /* Work grid */
-    .work-position-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 24px;
-      box-sizing: border-box;
+    .work-position-container{
+      display:flex; flex-direction:row; justify-content:space-between; flex-wrap:wrap; gap:24px;
+      box-sizing:border-box;
     }
 
-    .paragraph-light.cc-position-name a {
-      color: white;
-      text-decoration: none;
-    }
+    .paragraph-light.cc-position-name a{ color:white; text-decoration:none; }
+    .paragraph-light.cc-position-name{ line-height:1.6em; }
+    .paragraph-tiny.cc-paragraph-tiny-light{ margin-top:4px; }
 
-    .paragraph-light.cc-position-name {
-      line-height: 1.6em;
-    }
-
-    .paragraph-tiny.cc-paragraph-tiny-light {
-      margin-top: 4px;
-    }
-
-    /* Default spacing (desktop baseline) */
-    .heading-jumbo {
-      margin-bottom: 8px !important;
-    }
-
-    .carrer-headline-wrap {
-      margin-top: 8px !important;
-    }
+    /* Desktop spacing defaults */
+    .heading-jumbo{ margin-bottom:12px !important; }
+    .carrer-headline-wrap{ margin-top:12px !important; }
 
     /* ---------- MOBILE/NARROW ---------- */
-    @media (max-width: 992px) {
-      .section, .section .section, .section .container,
-      .container, .intro-wrap, .carrer-headline-wrap,
-      .footer-wrap, .footer-wrap .container {
-        margin: 0 !important;
-        padding: 0 !important;
-        box-sizing: border-box;
+    @media (max-width: 992px){
+      /* Collapse framework spacing so we control it */
+      .section, .section .section, .section .container, .container,
+      .intro-wrap, .carrer-headline-wrap, .footer-wrap, .footer-wrap .container{
+        margin:0 !important; padding:0 !important; box-sizing:border-box;
       }
 
+      /* Left/right gutters for aligned blocks */
       .content-wrap,
       .intro-wrap, .carrer-headline-wrap,
-      .work-position-container, .footer-links {
-        padding-left: var(--gutter-mobile) !important;
-        padding-right: var(--gutter-mobile) !important;
+      .work-position-container, .footer-links{
+        padding-left:var(--gutter-mobile) !important;
+        padding-right:var(--gutter-mobile) !important;
       }
 
-      .heading-jumbo {
-        margin-bottom: 10px !important;
+      /* Vertical rhythm */
+      .heading-jumbo{ margin-bottom:10px !important; }
+      .carrer-headline-wrap{ margin-top:10px !important; }
+      .carrer-headline-wrap p{ margin-bottom:0 !important; }
+      .work-position-container{ padding-top:16px !important; }
+
+      /* Column layout for work list */
+      .work-position-container{ flex-direction:column; gap:12px; }
+      .work-position-wrap{ width:100% !important; margin-bottom:8px !important; }
+      .work-position-wrap:last-child{ margin-bottom:0 !important; }
+
+      /* Left align all text */
+      body, .section, .container,
+      .intro-wrap, .carrer-headline-wrap, .work-position-container,
+      .work-position-wrap, .name-text, .paragraph-light,
+      .heading-jumbo, .heading, .footer-links{
+        text-align:left !important; margin-left:0 !important; margin-right:0 !important;
       }
 
-      .carrer-headline-wrap {
-        margin-top: 10px !important;
+      /* Footer layout */
+      .footer-wrap{ margin-top:20px !important; }
+      .footer-links{
+        display:flex; flex-direction:column; align-items:flex-start !important; gap:4px;
+        padding:0 !important; margin:0 !important;
       }
-
-      .carrer-headline-wrap p {
-        margin-bottom: 0 !important;
-      }
-
-      .work-position-container {
-        padding-top: 16px !important;
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      .work-position-wrap {
-        width: 100% !important;
-        margin-bottom: 8px !important;
-      }
-
-      .work-position-wrap:last-child {
-        margin-bottom: 0 !important;
-      }
-
-      body, .section, .container, .intro-wrap, .carrer-headline-wrap,
-      .work-position-container, .work-position-wrap, .name-text,
-      .paragraph-light, .heading-jumbo, .heading, .footer-links {
-        text-align: left !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-      }
-
-      .intro-wrap, .carrer-headline-wrap {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: flex-start !important;
-      }
-
-      .footer-wrap {
-        margin-top: 20px !important;
-      }
-
-      .footer-links {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start !important;
-        gap: 4px;
-        padding: 0 !important;
-        margin: 0 !important;
-      }
-
-      .footer-item {
-        display: block;
-        margin: 2px 0;
-      }
+      .footer-item{ display:block; margin:2px 0; }
     }
 
     /* ---------- DESKTOP/WIDE ---------- */
-    @media (min-width: 993px) {
-      .container {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-      }
+    @media (min-width: 993px){
+      /* Neutralize container padding so we use one consistent gutter */
+      .container{ padding-left:0 !important; padding-right:0 !important; }
 
+      /* Apply same left gutter to each aligned block */
       .content-wrap,
       .intro-wrap, .carrer-headline-wrap,
-      .work-position-container, .footer-links {
-        padding-left: var(--gutter-desktop) !important;
-        padding-right: var(--gutter-desktop) !important;
-        box-sizing: border-box;
+      .work-position-container, .footer-links{
+        padding-left:var(--gutter-desktop) !important;
+        padding-right:var(--gutter-desktop) !important;
+        box-sizing:border-box;
       }
 
-      /* Reduced spacing between heading and About */
-      .heading-jumbo {
-        margin-bottom: 6px !important;
+      /* Ensure footer wrapper doesn't sneak in extra padding */
+      .footer-wrap, .footer-wrap .container{
+        padding-left:0 !important; padding-right:0 !important;
       }
 
-      .carrer-headline-wrap {
-        margin-top: 6px !important;
-      }
-
-      .footer-wrap, .footer-wrap .container {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-      }
-
-      .intro-wrap, .carrer-headline-wrap, .footer-links {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+      /* Keep text left aligned */
+      .intro-wrap, .carrer-headline-wrap, .footer-links{
+        display:flex; flex-direction:column; align-items:flex-start;
       }
     }
   </style>
@@ -292,11 +225,11 @@
               </div>
               <div class="paragraph-tiny cc-paragraph-tiny-light">2012 — 2014</div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+          </div><!-- /work-position-container -->
+        </div><!-- /content-wrap -->
+      </div><!-- /container -->
+    </div><!-- /section -->
+  </div><!-- /section (outer) -->
 
   <div class="footer-wrap">
     <div class="container">
