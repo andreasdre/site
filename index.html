@@ -11,7 +11,11 @@
   <meta property="twitter:title" content="Andreas Homer">
   <meta property="twitter:image" content="https://raw.githubusercontent.com/andreasdre/site/main/images/Preview.png">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Viewport + iOS Status Bar -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
   <!-- Favicon -->
   <link rel="icon" href="https://raw.githubusercontent.com/andreasdre/site/main/images/carpe_diem_circle.png" type="image/png">
@@ -32,17 +36,36 @@
   <style>
     :root { --gutter-mobile: 16px; }
 
+    html, body { background: #000; }
+
+    /* Black underlay behind video for iOS sampling */
+    .bg-underlay {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      z-index: -2;
+    }
+
     /* Background video */
     #background-video {
-      position: fixed; right: 0; bottom: 0;
-      min-width: 100%; min-height: 100%;
-      z-index: -1; object-fit: cover; background-color: black;
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+      background-color: #000;
     }
 
     /* Work grid */
     .work-position-container {
-      display: flex; flex-direction: row; justify-content: space-between;
-      flex-wrap: wrap; gap: 24px; box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+      box-sizing: border-box;
     }
 
     @media (max-width: 768px) {
@@ -57,7 +80,9 @@
     @media (max-width: 992px) {
       .section, .section .section, .section .container, .container,
       .intro-wrap, .carrer-headline-wrap, .footer-wrap, .footer-wrap .container {
-        margin: 0 !important; padding: 0 !important; box-sizing: border-box;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box;
       }
 
       .intro-wrap, .carrer-headline-wrap, .work-position-container, .footer-links {
@@ -74,29 +99,38 @@
       body, .section, .container, .intro-wrap, .carrer-headline-wrap,
       .work-position-container, .work-position-wrap, .name-text,
       .paragraph-light, .heading-jumbo, .heading, .footer-links {
-        text-align: left !important; margin-left: 0 !important; margin-right: 0 !important;
+        text-align: left !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
       }
 
       .intro-wrap, .carrer-headline-wrap {
-        display: flex !important; flex-direction: column !important; align-items: flex-start !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
       }
 
       .work-position-wrap {
-        width: 100% !important; margin-bottom: 8px !important; box-sizing: border-box;
+        width: 100% !important;
+        margin-bottom: 8px !important;
+        box-sizing: border-box;
       }
       .work-position-wrap:last-child { margin-bottom: 0 !important; }
 
       .footer-wrap { margin-top: 20px !important; }
       .footer-links {
-        display: flex; flex-direction: column; align-items: flex-start !important; gap: 4px;
-        border: 0; outline: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 4px;
+        border: 0;
+        outline: 0;
       }
       .footer-item { display: block; margin: 2px 0; }
     }
 
     /* ---------- DESKTOP/WIDE ---------- */
     @media (min-width: 993px) {
-      /* Neutralize hidden defaults between hero and About */
       .intro-wrap { margin-bottom: 0 !important; padding-bottom: 0 !important; }
       .carrer-headline-wrap { margin-top: 0 !important; padding-top: 0 !important; }
       .carrer-headline-wrap .heading { margin-top: 0 !important; }
@@ -105,17 +139,22 @@
       .section > .container + .section .container,
       .intro-wrap + .section,
       .intro-wrap + .section .container {
-        margin-top: 0 !important; padding-top: 0 !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
       }
 
-      /* Increased desktop spacing: hero -> About */
+      /* Balanced spacing between “Passionate…” and “About” */
       .intro-wrap h1.heading-jumbo { margin-bottom: 36px !important; }
       .carrer-headline-wrap { margin-top: 28px !important; }
 
       /* Center footer on desktop */
       .footer-links {
-        display: flex; flex-direction: row; justify-content: center; align-items: center;
-        gap: 16px; text-align: center !important;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        text-align: center !important;
       }
       .footer-item { display: inline-block; white-space: nowrap; }
     }
@@ -123,6 +162,8 @@
 </head>
 
 <body class="body">
+  <div class="bg-underlay"></div>
+
   <!-- Background Video -->
   <video autoplay muted loop playsinline webkit-playsinline preload="auto" id="background-video">
     <source src="https://raw.githubusercontent.com/andreasdre/site/main/images/carpediem.mp4" type="video/mp4">
@@ -155,25 +196,19 @@
         <div class="work-position-container">
 
           <div class="work-position-wrap">
-            <div class="position-name-text">
-              <a href="http://world.org/" target="_blank" class="link-4">World</a>
-            </div>
+            <div class="position-name-text"><a href="http://world.org/" target="_blank" class="link-4">World</a></div>
             <div class="paragraph-light cc-position-name"><strong class="bold-text">Partnerships</strong></div>
             <div class="paragraph-tiny cc-paragraph-tiny-light">2025 — Present</div>
           </div>
 
           <div class="work-position-wrap">
-            <div class="position-name-text">
-              <a href="https://www.shopify.com/" target="_blank" class="link-4">Shopify</a>
-            </div>
+            <div class="position-name-text"><a href="https://www.shopify.com/" target="_blank" class="link-4">Shopify</a></div>
             <div class="paragraph-light cc-position-name"><strong class="bold-text">Director, Partnerships</strong></div>
             <div class="paragraph-tiny cc-paragraph-tiny-light">2024 — 2025</div>
           </div>
 
           <div class="work-position-wrap">
-            <div class="position-name-text">
-              <a href="https://www.theinformation.com/articles/openai-looks-to-steal-googles-thunder-unicorn-ai-marketing-startup-typeface-acquires-consumer-chatbot-app" target="_blank" class="link-4">Cypher</a>
-            </div>
+            <div class="position-name-text"><a href="https://www.theinformation.com/articles/openai-looks-to-steal-googles-thunder-unicorn-ai-marketing-startup-typeface-acquires-consumer-chatbot-app" target="_blank" class="link-4">Cypher</a></div>
             <div class="paragraph-light cc-position-name">
               <strong class="bold-text">Co-Founder, CEO</strong><br>
               <a href="https://www.theinformation.com/articles/openai-looks-to-steal-googles-thunder-unicorn-ai-marketing-startup-typeface-acquires-consumer-chatbot-app">(acq. by Typeface AI)</a>
@@ -182,35 +217,26 @@
           </div>
 
           <div class="work-position-wrap">
-            <div class="position-name-text">
-              <a href="https://www.theverge.com/2015/1/29/7936081/microsoft-outlook-app-ios-android-features" target="_blank" class="link-4">Microsoft</a>
-            </div>
+            <div class="position-name-text"><a href="https://www.theverge.com/2015/1/29/7936081/microsoft-outlook-app-ios-android-features" target="_blank" class="link-4">Microsoft</a></div>
             <div class="paragraph-light cc-position-name"><strong class="bold-text">Director, BD</strong></div>
             <div class="paragraph-tiny cc-paragraph-tiny-light">2015 — 2020</div>
           </div>
 
           <div class="work-position-wrap">
-            <div class="position-name-text">
-              <a href="https://www.vox.com/2014/12/1/11633386/microsoft-buys-mobile-email-startup-acompli-for-more-than-200-million" target="_blank" class="link-4">Acompli</a>
-            </div>
+            <div class="position-name-text"><a href="https://www.vox.com/2014/12/1/11633386/microsoft-buys-mobile-email-startup-acompli-for-more-than-200-million" target="_blank" class="link-4">Acompli</a></div>
             <div class="paragraph-light cc-position-name">
-              <strong class="bold-text">BD, Product</strong><br>
-              (acq. by Microsoft)
+              <strong class="bold-text">BD, Product</strong><br>(acq. by Microsoft)
             </div>
             <div class="paragraph-tiny cc-paragraph-tiny-light">2014 — 2015</div>
           </div>
 
           <div class="work-position-wrap">
-            <div class="position-name-text">
-              <a href="https://www.wsj.com/articles/daum-kakao-to-buy-paths-social-media-services-1432865518" target="_blank" class="link-4">Path</a>
-            </div>
+            <div class="position-name-text"><a href="https://www.wsj.com/articles/daum-kakao-to-buy-paths-social-media-services-1432865518" target="_blank" class="link-4">Path</a></div>
             <div class="paragraph-light cc-position-name">
-              <strong class="bold-text">BD, Product</strong><br>
-              (acq. by KakaoTalk)
+              <strong class="bold-text">BD, Product</strong><br>(acq. by KakaoTalk)
             </div>
             <div class="paragraph-tiny cc-paragraph-tiny-light">2012 — 2014</div>
           </div>
-
         </div>
       </div>
     </div>
