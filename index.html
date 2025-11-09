@@ -53,10 +53,6 @@
     .paragraph-light.cc-position-name { line-height: 1.6em; }
     .paragraph-tiny.cc-paragraph-tiny-light { margin-top: 4px; }
 
-    /* Desktop spacing — extra tight */
-    .heading-jumbo { margin-bottom: 4px !important; }
-    .carrer-headline-wrap { margin-top: 4px !important; }
-
     /* ---------- MOBILE/NARROW ---------- */
     @media (max-width: 992px) {
       /* Reset wrappers so we control spacing */
@@ -65,7 +61,7 @@
         margin: 0 !important; padding: 0 !important; box-sizing: border-box;
       }
 
-      /* Apply one consistent gutter to the blocks that should align */
+      /* Apply one consistent gutter */
       .intro-wrap, .carrer-headline-wrap, .work-position-container, .footer-links {
         padding-left: var(--gutter-mobile) !important;
         padding-right: var(--gutter-mobile) !important;
@@ -78,7 +74,7 @@
       .carrer-headline-wrap p { margin-bottom: 0 !important; }
       .work-position-container { padding-top: 16px !important; }
 
-      /* Left alignment everywhere */
+      /* Left alignment */
       body, .section, .container, .intro-wrap, .carrer-headline-wrap,
       .work-position-container, .work-position-wrap, .name-text,
       .paragraph-light, .heading-jumbo, .heading, .footer-links {
@@ -107,6 +103,26 @@
 
     /* ---------- DESKTOP/WIDE ---------- */
     @media (min-width: 993px) {
+      /* Tighter hero -> About spacing (override Webflow defaults strongly) */
+      .intro-wrap h1.heading-jumbo { margin-bottom: 0 !important; }
+      .intro-wrap { margin-bottom: 0 !important; padding-bottom: 0 !important; }
+
+      /* The About block itself */
+      .carrer-headline-wrap { margin-top: 0 !important; padding-top: 0 !important; }
+      .carrer-headline-wrap .heading { margin-top: 0 !important; }
+
+      /* Neutralize any container/section top spacing between hero block and About block */
+      .section > .container + .section,
+      .section > .container + .section .container,
+      .intro-wrap + .section,
+      .intro-wrap + .section .container {
+        margin-top: 0 !important; padding-top: 0 !important;
+      }
+
+      /* Optional: give the tiniest controlled gap if you want a hairline of space */
+      .intro-wrap h1.heading-jumbo + * { margin-top: 2px !important; }
+      .carrer-headline-wrap { margin-top: 2px !important; }
+
       /* Center footer on desktop */
       .footer-links {
         display: flex; flex-direction: row; justify-content: center; align-items: center;
