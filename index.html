@@ -30,45 +30,26 @@
   </script>
 
   <style>
-    :root {
-      --gutter-mobile: 16px;
-      --gutter-desktop: 24px; /* consistent desktop left margin */
-    }
+    :root { --gutter-mobile: 16px; }
 
     /* Background video */
     #background-video {
-      position: fixed;
-      right: 0;
-      bottom: 0;
-      min-width: 100%;
-      min-height: 100%;
-      z-index: -1;
-      object-fit: cover;
-      background-color: black;
+      position: fixed; right: 0; bottom: 0;
+      min-width: 100%; min-height: 100%;
+      z-index: -1; object-fit: cover; background-color: black;
     }
 
     /* Work grid */
     .work-position-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 24px;
-      box-sizing: border-box;
+      display: flex; flex-direction: row; justify-content: space-between;
+      flex-wrap: wrap; gap: 24px; box-sizing: border-box;
     }
 
     @media (max-width: 768px) {
-      .work-position-container {
-        flex-direction: column;
-        gap: 12px;
-      }
+      .work-position-container { flex-direction: column; gap: 12px; }
     }
 
-    .paragraph-light.cc-position-name a {
-      color: white;
-      text-decoration: none;
-    }
-
+    .paragraph-light.cc-position-name a { color: white; text-decoration: none; }
     .paragraph-light.cc-position-name { line-height: 1.6em; }
     .paragraph-tiny.cc-paragraph-tiny-light { margin-top: 4px; }
 
@@ -79,24 +60,13 @@
     /* ---------- MOBILE/NARROW ---------- */
     @media (max-width: 992px) {
       /* Reset wrappers so we control spacing */
-      .section,
-      .section .section,
-      .section .container,
-      .container,
-      .intro-wrap,
-      .carrer-headline-wrap,
-      .footer-wrap,
-      .footer-wrap .container {
-        margin: 0 !important;
-        padding: 0 !important;
-        box-sizing: border-box;
+      .section, .section .section, .section .container, .container,
+      .intro-wrap, .carrer-headline-wrap, .footer-wrap, .footer-wrap .container {
+        margin: 0 !important; padding: 0 !important; box-sizing: border-box;
       }
 
       /* Apply one consistent gutter to the blocks that should align */
-      .intro-wrap,
-      .carrer-headline-wrap,
-      .work-position-container,
-      .footer-links {
+      .intro-wrap, .carrer-headline-wrap, .work-position-container, .footer-links {
         padding-left: var(--gutter-mobile) !important;
         padding-right: var(--gutter-mobile) !important;
         box-sizing: border-box;
@@ -109,39 +79,27 @@
       .work-position-container { padding-top: 16px !important; }
 
       /* Left alignment everywhere */
-      body, .section, .container,
-      .intro-wrap, .carrer-headline-wrap,
-      .work-position-container, .work-position-wrap,
-      .name-text, .paragraph-light,
-      .heading-jumbo, .heading,
-      .footer-links {
-        text-align: left !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
+      body, .section, .container, .intro-wrap, .carrer-headline-wrap,
+      .work-position-container, .work-position-wrap, .name-text,
+      .paragraph-light, .heading-jumbo, .heading, .footer-links {
+        text-align: left !important; margin-left: 0 !important; margin-right: 0 !important;
       }
 
       /* Flex for headers */
       .intro-wrap, .carrer-headline-wrap {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: flex-start !important;
+        display: flex !important; flex-direction: column !important; align-items: flex-start !important;
       }
 
       /* Work item spacing */
       .work-position-wrap {
-        width: 100% !important;
-        margin-bottom: 8px !important;
-        box-sizing: border-box;
+        width: 100% !important; margin-bottom: 8px !important; box-sizing: border-box;
       }
       .work-position-wrap:last-child { margin-bottom: 0 !important; }
 
       /* Footer spacing and alignment */
       .footer-wrap { margin-top: 20px !important; }
       .footer-links {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start !important;
-        gap: 4px;
+        display: flex; flex-direction: column; align-items: flex-start !important; gap: 4px;
         border: 0; outline: 0;
       }
       .footer-item { display: block; margin: 2px 0; }
@@ -149,28 +107,12 @@
 
     /* ---------- DESKTOP/WIDE ---------- */
     @media (min-width: 993px) {
-      /* Align footer left edge with About and World */
-      .intro-wrap,
-      .carrer-headline-wrap,
-      .work-position-container,
+      /* Center the footer links on one line */
       .footer-links {
-        padding-left: var(--gutter-desktop) !important;
-        padding-right: var(--gutter-desktop) !important;
-        box-sizing: border-box;
+        display: flex; flex-direction: row; justify-content: center; align-items: center;
+        gap: 16px; text-align: center !important; margin-left: 0 !important; margin-right: 0 !important;
       }
-
-      .footer-wrap, .footer-wrap .container {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-      }
-
-      .footer-links {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start !important;
-        text-align: left !important;
-        margin-left: 0 !important;
-      }
+      .footer-item { display: inline-block; white-space: nowrap; }
     }
   </style>
 </head>
