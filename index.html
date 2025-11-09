@@ -55,44 +55,37 @@
 
     /* ---------- MOBILE/NARROW ---------- */
     @media (max-width: 992px) {
-      /* Reset wrappers so we control spacing */
       .section, .section .section, .section .container, .container,
       .intro-wrap, .carrer-headline-wrap, .footer-wrap, .footer-wrap .container {
         margin: 0 !important; padding: 0 !important; box-sizing: border-box;
       }
 
-      /* Apply one consistent gutter */
       .intro-wrap, .carrer-headline-wrap, .work-position-container, .footer-links {
         padding-left: var(--gutter-mobile) !important;
         padding-right: var(--gutter-mobile) !important;
         box-sizing: border-box;
       }
 
-      /* Vertical rhythm */
       .heading-jumbo { margin-bottom: 10px !important; }
       .carrer-headline-wrap { margin-top: 10px !important; }
       .carrer-headline-wrap p { margin-bottom: 0 !important; }
       .work-position-container { padding-top: 16px !important; }
 
-      /* Left alignment */
       body, .section, .container, .intro-wrap, .carrer-headline-wrap,
       .work-position-container, .work-position-wrap, .name-text,
       .paragraph-light, .heading-jumbo, .heading, .footer-links {
         text-align: left !important; margin-left: 0 !important; margin-right: 0 !important;
       }
 
-      /* Flex for headers */
       .intro-wrap, .carrer-headline-wrap {
         display: flex !important; flex-direction: column !important; align-items: flex-start !important;
       }
 
-      /* Work item spacing */
       .work-position-wrap {
         width: 100% !important; margin-bottom: 8px !important; box-sizing: border-box;
       }
       .work-position-wrap:last-child { margin-bottom: 0 !important; }
 
-      /* Footer spacing and alignment */
       .footer-wrap { margin-top: 20px !important; }
       .footer-links {
         display: flex; flex-direction: column; align-items: flex-start !important; gap: 4px;
@@ -103,15 +96,13 @@
 
     /* ---------- DESKTOP/WIDE ---------- */
     @media (min-width: 993px) {
-      /* Tighter hero -> About spacing (override Webflow defaults strongly) */
+      /* Collapse unexpected defaults, then add a small, comfy gap */
       .intro-wrap h1.heading-jumbo { margin-bottom: 0 !important; }
       .intro-wrap { margin-bottom: 0 !important; padding-bottom: 0 !important; }
 
-      /* The About block itself */
       .carrer-headline-wrap { margin-top: 0 !important; padding-top: 0 !important; }
       .carrer-headline-wrap .heading { margin-top: 0 !important; }
 
-      /* Neutralize any container/section top spacing between hero block and About block */
       .section > .container + .section,
       .section > .container + .section .container,
       .intro-wrap + .section,
@@ -119,9 +110,9 @@
         margin-top: 0 !important; padding-top: 0 !important;
       }
 
-      /* Optional: give the tiniest controlled gap if you want a hairline of space */
-      .intro-wrap h1.heading-jumbo + * { margin-top: 2px !important; }
-      .carrer-headline-wrap { margin-top: 2px !important; }
+      /* Final tuned spacing: 6px total between hero and About */
+      .intro-wrap h1.heading-jumbo + * { margin-top: 3px !important; }
+      .carrer-headline-wrap { margin-top: 3px !important; }
 
       /* Center footer on desktop */
       .footer-links {
