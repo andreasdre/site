@@ -34,19 +34,31 @@
 
     /* Background video */
     #background-video {
-      position: fixed; right: 0; bottom: 0;
-      min-width: 100%; min-height: 100%;
-      z-index: -1; object-fit: cover; background-color: black;
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+      background-color: black;
     }
 
     /* Work grid */
     .work-position-container {
-      display: flex; flex-direction: row; justify-content: space-between;
-      flex-wrap: wrap; gap: 24px; box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+      box-sizing: border-box;
     }
 
     @media (max-width: 768px) {
-      .work-position-container { flex-direction: column; gap: 12px; }
+      .work-position-container {
+        flex-direction: column;
+        gap: 12px;
+      }
     }
 
     .paragraph-light.cc-position-name a { color: white; text-decoration: none; }
@@ -57,7 +69,9 @@
     @media (max-width: 992px) {
       .section, .section .section, .section .container, .container,
       .intro-wrap, .carrer-headline-wrap, .footer-wrap, .footer-wrap .container {
-        margin: 0 !important; padding: 0 !important; box-sizing: border-box;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box;
       }
 
       .intro-wrap, .carrer-headline-wrap, .work-position-container, .footer-links {
@@ -66,64 +80,120 @@
         box-sizing: border-box;
       }
 
-      .heading-jumbo { margin-bottom: 10px !important; }
-      .carrer-headline-wrap { margin-top: 10px !important; }
-      .carrer-headline-wrap p { margin-bottom: 0 !important; }
-      .work-position-container { padding-top: 16px !important; }
+      .heading-jumbo {
+        margin-bottom: 10px !important;
+      }
+
+      .carrer-headline-wrap {
+        margin-top: 10px !important;
+      }
+
+      .carrer-headline-wrap p {
+        margin-bottom: 0 !important;
+      }
+
+      .work-position-container {
+        padding-top: 16px !important;
+      }
 
       body, .section, .container, .intro-wrap, .carrer-headline-wrap,
       .work-position-container, .work-position-wrap, .name-text,
       .paragraph-light, .heading-jumbo, .heading, .footer-links {
-        text-align: left !important; margin-left: 0 !important; margin-right: 0 !important;
+        text-align: left !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
       }
 
       .intro-wrap, .carrer-headline-wrap {
-        display: flex !important; flex-direction: column !important; align-items: flex-start !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
       }
 
       .work-position-wrap {
-        width: 100% !important; margin-bottom: 8px !important; box-sizing: border-box;
+        width: 100% !important;
+        margin-bottom: 8px !important;
+        box-sizing: border-box;
       }
-      .work-position-wrap:last-child { margin-bottom: 0 !important; }
 
-      .footer-wrap { margin-top: 20px !important; }
-      .footer-links {
-        display: flex; flex-direction: column; align-items: flex-start !important; gap: 4px;
-        border: 0; outline: 0;
+      .work-position-wrap:last-child {
+        margin-bottom: 0 !important;
       }
-      .footer-item { display: block; margin: 2px 0; }
+
+      .footer-wrap {
+        margin-top: 20px !important;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 4px;
+        border: 0;
+        outline: 0;
+      }
+
+      .footer-item {
+        display: block;
+        margin: 2px 0;
+      }
+
+      /* ---------- NEW: breathing room at top for mobile ---------- */
+      .intro-wrap {
+        padding-top: 28px !important;
+      }
     }
 
     /* ---------- DESKTOP/WIDE ---------- */
     @media (min-width: 993px) {
-      /* Neutralize hidden defaults between hero and About */
-      .intro-wrap { margin-bottom: 0 !important; padding-bottom: 0 !important; }
-      .carrer-headline-wrap { margin-top: 0 !important; padding-top: 0 !important; }
-      .carrer-headline-wrap .heading { margin-top: 0 !important; }
+      .intro-wrap {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+      }
+
+      .carrer-headline-wrap {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+      }
+
+      .carrer-headline-wrap .heading {
+        margin-top: 0 !important;
+      }
 
       .section > .container + .section,
       .section > .container + .section .container,
       .intro-wrap + .section,
       .intro-wrap + .section .container {
-        margin-top: 0 !important; padding-top: 0 !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
       }
 
-      /* Increased desktop spacing: hero -> About */
-      .intro-wrap h1.heading-jumbo { margin-bottom: 36px !important; }
-      .carrer-headline-wrap { margin-top: 28px !important; }
+      .intro-wrap h1.heading-jumbo {
+        margin-bottom: 36px !important;
+      }
 
-      /* Center footer on desktop */
+      .carrer-headline-wrap {
+        margin-top: 28px !important;
+      }
+
       .footer-links {
-        display: flex; flex-direction: row; justify-content: center; align-items: center;
-        gap: 16px; text-align: center !important;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        text-align: center !important;
       }
-      .footer-item { display: inline-block; white-space: nowrap; }
+
+      .footer-item {
+        display: inline-block;
+        white-space: nowrap;
+      }
     }
   </style>
 </head>
 
 <body class="body">
-  <!-- Background Video -->
   <video autoplay muted loop playsinline webkit-playsinline preload="auto" id="background-video">
     <source src="https://raw.githubusercontent.com/andreasdre/site/main/images/carpediem.mp4" type="video/mp4">
     Your browser does not support the video tag.
@@ -151,7 +221,6 @@
           </p>
         </div>
 
-        <!-- Work Experience -->
         <div class="work-position-container">
 
           <div class="work-position-wrap">
@@ -159,7 +228,7 @@
               <a href="http://world.org/" target="_blank" class="link-4">World</a>
             </div>
             <div class="paragraph-light cc-position-name"><strong class="bold-text">Partnerships</strong></div>
-            <div class="paragraph-tiny cc-paragraph-tiny-light">2025 — Present</div>
+            <div class="paragraph-tiny cc-paragraph-tiny-light">2025 - Present</div>
           </div>
 
           <div class="work-position-wrap">
@@ -167,7 +236,7 @@
               <a href="https://www.shopify.com/" target="_blank" class="link-4">Shopify</a>
             </div>
             <div class="paragraph-light cc-position-name"><strong class="bold-text">Director, Partnerships</strong></div>
-            <div class="paragraph-tiny cc-paragraph-tiny-light">2024 — 2025</div>
+            <div class="paragraph-tiny cc-paragraph-tiny-light">2024 - 2025</div>
           </div>
 
           <div class="work-position-wrap">
@@ -178,7 +247,7 @@
               <strong class="bold-text">Co-Founder, CEO</strong><br>
               <a href="https://www.theinformation.com/articles/openai-looks-to-steal-googles-thunder-unicorn-ai-marketing-startup-typeface-acquires-consumer-chatbot-app">(acq. by Typeface AI)</a>
             </div>
-            <div class="paragraph-tiny cc-paragraph-tiny-light">2020 — 2024</div>
+            <div class="paragraph-tiny cc-paragraph-tiny-light">2020 - 2024</div>
           </div>
 
           <div class="work-position-wrap">
@@ -186,7 +255,7 @@
               <a href="https://www.theverge.com/2015/1/29/7936081/microsoft-outlook-app-ios-android-features" target="_blank" class="link-4">Microsoft</a>
             </div>
             <div class="paragraph-light cc-position-name"><strong class="bold-text">Director, BD</strong></div>
-            <div class="paragraph-tiny cc-paragraph-tiny-light">2015 — 2020</div>
+            <div class="paragraph-tiny cc-paragraph-tiny-light">2015 - 2020</div>
           </div>
 
           <div class="work-position-wrap">
@@ -197,7 +266,7 @@
               <strong class="bold-text">BD, Product</strong><br>
               (acq. by Microsoft)
             </div>
-            <div class="paragraph-tiny cc-paragraph-tiny-light">2014 — 2015</div>
+            <div class="paragraph-tiny cc-paragraph-tiny-light">2014 - 2015</div>
           </div>
 
           <div class="work-position-wrap">
@@ -208,7 +277,7 @@
               <strong class="bold-text">BD, Product</strong><br>
               (acq. by KakaoTalk)
             </div>
-            <div class="paragraph-tiny cc-paragraph-tiny-light">2012 — 2014</div>
+            <div class="paragraph-tiny cc-paragraph-tiny-light">2012 - 2014</div>
           </div>
 
         </div>
