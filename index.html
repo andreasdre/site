@@ -61,9 +61,26 @@
       }
     }
 
-    .paragraph-light.cc-position-name a { color: white; text-decoration: none; }
-    .paragraph-light.cc-position-name { line-height: 1.6em; }
-    .paragraph-tiny.cc-paragraph-tiny-light { margin-top: 4px; }
+    .paragraph-light.cc-position-name a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .paragraph-light.cc-position-name {
+      line-height: 1.6em;
+    }
+
+    /* Fix punctuation direction on iPhone/mobile */
+    .paragraph-light.cc-position-name,
+    .paragraph-light.cc-position-name .bold-text {
+      direction: ltr !important;
+      unicode-bidi: normal !important;
+      text-align: left !important;
+    }
+
+    .paragraph-tiny.cc-paragraph-tiny-light {
+      margin-top: 4px;
+    }
 
     /* ---------- MOBILE/NARROW ---------- */
     @media (max-width: 992px) {
@@ -138,7 +155,7 @@
         margin: 2px 0;
       }
 
-      /* ---------- NEW: breathing room at top for mobile ---------- */
+      /* Breathing room at top for mobile */
       .intro-wrap {
         padding-top: 28px !important;
       }
